@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "pHwrjtKnPjEYyeRBTo3+SA9kRC6uahS0tz9GS8J8Qr3lyWFVXk8XfjXiJmADkdm71f/W6KS9E9RvqHuQmwCwNw==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\steve\\Documents\\My Games\\Terraria\\ModLoader\\Mod Sources\\MoreWeaponaria\\MoreWeaponaria.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\steve\\.nuget\\packages\\tmodloader.codeassist\\0.1.1\\tmodloader.codeassist.0.1.1.nupkg.sha512"
+  ],
+  "logs": []
+}
