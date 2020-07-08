@@ -18,8 +18,8 @@ namespace MoreWeaponaria.Items
 			item.melee = true;
 			item.width = 34;
 			item.height = 34;
-			item.useTime = 19;
-			item.useAnimation = 19;
+			item.useTime = 8;
+			item.useAnimation = 10;
 			item.useStyle = ItemUseStyleID.SwingThrow;
 			item.knockBack = 100;
 			item.value = 1000000;

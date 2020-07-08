@@ -38,10 +38,10 @@ namespace MoreWeaponaria.Items.Weapons
             projectile.velocity = (Main.MouseWorld - projectile.position) / 2;
 
             if (Main.rand.Next(50) == 25)
-                for (int i = 0; i < 5; i++)
+                for (int i = 0; i < 3; i++)
                 {
-                    Projectile.NewProjectile(new Vector2(projectile.position.X - 50 + i * 20, projectile.position.Y - 1000), new Vector2(Main.rand.Next(-5, 5), 25), ProjectileID.JestersArrow, 2500, 2f, Main.myPlayer, 0f, 0f);
-                    Projectile.NewProjectile(new Vector2(projectile.position.X - 50 + i * 20, projectile.position.Y + 1000), new Vector2(Main.rand.Next(-5, 5), -25), ProjectileID.Starfury, 2500, 2f, Main.myPlayer, 0f, 0f);
+                    Projectile.NewProjectile(new Vector2(projectile.position.X - 50 + i * 20, projectile.position.Y - 1000), new Vector2(Main.rand.Next(-3, 3), 50), ProjectileID.JestersArrow, 4000, 2f, Main.myPlayer, 0f, 0f);
+                    Projectile.NewProjectile(new Vector2(projectile.position.X - 50 + i * 20, projectile.position.Y + 1000), new Vector2(Main.rand.Next(-3, 3), -50), ProjectileID.Starfury, 4000, 2f, Main.myPlayer, 0f, 0f);
                 }
         }
         

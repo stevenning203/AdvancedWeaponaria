@@ -43,7 +43,7 @@ namespace MoreWeaponaria.Items.NPCBOSS
             npc.npcSlots = 5f;
             npc.knockBackResist = 0f;
             npc.defense = 85;
-            npc.damage = 45;
+            npc.damage = 38;
             npc.lavaImmune = true;
             npc.noTileCollide = true;
             npc.noGravity = true;
@@ -105,7 +105,7 @@ namespace MoreWeaponaria.Items.NPCBOSS
             {
                 attackState = 0;
                 frame = 0;
-                MoveTowards(npc, target, 15f, 30f);
+                MoveTowards(npc, target, 12f, 30f);
                 npc.netUpdate = true;
             }
             else if ((double)npc.ai[0] >= 600 && (double)npc.ai[0] < 900)
@@ -149,29 +149,21 @@ namespace MoreWeaponaria.Items.NPCBOSS
             {
                 if (attackState == 1)
                 {
-                    if ((double)npc.ai[0] % 20 == 0)
+                    if ((double)npc.ai[0] % 15 == 0)
                     {
-                        attackTimer++;
-                        if (attackTimer <= 2)
-                        {
-                            frame = 2;
-                            Vector2 shootPos = npc.Center;
-                            float accuracy = 5f * (npc.life / npc.lifeMax);
-                            Vector2 shootVel = target - shootPos + new Vector2(Main.rand.NextFloat(-accuracy, accuracy), Main.rand.NextFloat(-accuracy, accuracy));
-                            shootVel.Normalize();
-                            shootVel *= 19f;
-                            Main.PlaySound(SoundID.Item, npc.Center, 9);
-                            Projectile.NewProjectile(npc.Center, shootVel, mod.ProjectileType("MaraProjectileStar"), npc.damage / 5, 10f);
-                        }
-                        else
-                        {
-                            attackTimer = 0;
-                        }
+                        frame = 2;
+                        Vector2 shootPos = npc.Center;
+                        float accuracy = 5f * (npc.life / npc.lifeMax);
+                        Vector2 shootVel = target - shootPos + new Vector2(Main.rand.NextFloat(-accuracy, accuracy), Main.rand.NextFloat(-accuracy, accuracy));
+                        shootVel.Normalize();
+                        shootVel *= 19f;
+                        Main.PlaySound(SoundID.Item, npc.Center, 9);
+                        Projectile.NewProjectile(npc.Center, shootVel, mod.ProjectileType("MaraProjectileStar"), npc.damage / 5, 10f);
                     }
                 }
                 else if (attackState == 2)
                 {
-                    if ((double)npc.ai[0] % 14 == 0)
+                    if ((double)npc.ai[0] % 15 == 0)
                     {
                         Vector2 shootPos = new Vector2(npc.position.X + Main.rand.Next(-100, 101), npc.position.Y - 1000);
                         float accuracy = npc.life / npc.lifeMax;
