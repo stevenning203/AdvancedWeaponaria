@@ -37,6 +37,7 @@ namespace MoreWeaponaria.Items.Materials
             player.QuickSpawnItem(mod.ItemType("Zenithite"), Main.rand.Next(365, 1000));
             player.QuickSpawnItem(mod.ItemType("AncientRingOfMara"));
             player.QuickSpawnItem(ItemID.FallenStar, 100);
+            player.QuickSpawnItem(mod.ItemType("MarianFragment"));
             int maraBossBagTest = Main.rand.Next(100);
             if (maraBossBagTest < 50)
             {
