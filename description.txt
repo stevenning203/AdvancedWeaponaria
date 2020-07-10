@@ -1,1 +1,3 @@
-More Weaponaria is a pretty cool mod, it does...this. Modify this file with a description of your mod.
+More Weaponaria adds cool bosses and weapons!
+\n
+Check https://stevenning203.github.io/TerraDoc/ for documentation.

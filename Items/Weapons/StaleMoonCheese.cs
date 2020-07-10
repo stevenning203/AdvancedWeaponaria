@@ -28,7 +28,7 @@ namespace MoreWeaponaria.Items.Weapons
         {
             player.statLifeMax2 = 250;
             player.lifeRegen += 40;
-            player.potionDelayTime = (int)((double)player.potionDelayTime * 2);
+            player.potionDelay = 69;
             player.brokenArmor = true;
         }
 
