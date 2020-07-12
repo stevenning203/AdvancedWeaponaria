@@ -20,13 +20,7 @@ namespace MoreWeaponaria.Items.NPCBOSS
         // Attackstate 0 = Stunned, 1 = Star attack, 2 = Laser Sweep, 3 = Super Chase
         private int attackState = 0;
         private int ai;
-        private int attackTimer = 0;
-        private bool fastSpeed = false;
 
-        private bool stunned = false;
-        private int stunnedTimer;
-
-        private int frame = 0;
         private double counting;
         public override void SetStaticDefaults()
         {
@@ -96,7 +90,6 @@ namespace MoreWeaponaria.Items.NPCBOSS
             if ((double)npc.ai[0] < 300)
             {
                 attackState = 1;
-                frame = 0;
                 npc.velocity.X = 0;
                 npc.velocity.Y = 0;
                 npc.netUpdate = true;
@@ -104,7 +97,6 @@ namespace MoreWeaponaria.Items.NPCBOSS
             else if ((double)npc.ai[0] >= 300 && (double)npc.ai[0] < 600)
             {
                 attackState = 0;
-                frame = 0;
                 MoveTowards(npc, target, 12f, 30f);
                 npc.netUpdate = true;
             }
@@ -113,13 +105,11 @@ namespace MoreWeaponaria.Items.NPCBOSS
                 attackState = 2;
                 npc.velocity.X = 0;
                 npc.velocity.Y = 0;
-                frame = 1;
                 npc.netUpdate = true;
             }
             else if ((double)npc.ai[0] >= 900 && (double)npc.ai[0] < 1200)
             {
                 attackState = 0;
-                frame = 0;
                 MoveTowards(npc, target, 10f, 30f);
                 npc.netUpdate = true;
             }
@@ -128,7 +118,6 @@ namespace MoreWeaponaria.Items.NPCBOSS
                 attackState = 3;
                 npc.velocity.X = 0;
                 npc.velocity.Y = 0;
-                frame = 1;
                 npc.netUpdate = true;
             }
             else
@@ -143,7 +132,6 @@ namespace MoreWeaponaria.Items.NPCBOSS
             {
                 ai = 0;
                 npc.alpha = 0;
-                fastSpeed = false;
             }
             else
             {
@@ -151,7 +139,6 @@ namespace MoreWeaponaria.Items.NPCBOSS
                 {
                     if ((double)npc.ai[0] % 15 == 0)
                     {
-                        frame = 2;
                         Vector2 shootPos = npc.Center;
                         float accuracy = 5f * (npc.life / npc.lifeMax);
                         Vector2 shootVel = target - shootPos + new Vector2(Main.rand.NextFloat(-accuracy, accuracy), Main.rand.NextFloat(-accuracy, accuracy));
